@@ -27,7 +27,7 @@ jobs:
         run: pip install -r requirements_dev.txt
 
   lint-flake8:
-    name: Prepare base dependencies
+    name: Flake8
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
@@ -45,7 +45,7 @@ jobs:
         run: flake8
 
   lint-mypy:
-    name: Prepare base dependencies
+    name: MyPy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
@@ -63,7 +63,7 @@ jobs:
         run: mypy openident
 
   lint-pylint:
-    name: Prepare base dependencies
+    name: PyLint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
