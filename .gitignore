@@ -1,0 +1,15 @@
+_sql
+
+# Python packages
+build
+dist
+*.egg
+*.egg-info
+
+# venv
+venv
+.venv
+
+.tox
+
+**/__pycache__

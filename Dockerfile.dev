@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/vscode/devcontainers/python:0-3.9
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+RUN \
+    apt update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    fish \
+    git \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/src
+
+WORKDIR /workspaces
+
+ENV SHELL /bin/fish
