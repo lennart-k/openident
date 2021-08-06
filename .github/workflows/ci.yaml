@@ -79,3 +79,21 @@ jobs:
         run: pip install -r requirements_dev.txt
       - name: Run pylint
         run: pylint openident
+
+  test-pytest:
+    name: pytest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Set up Python ${{ env.DEFAULT_PYTHON }}
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: ${{ env.DEFAULT_PYTHON }}
+      - name: Install base requirements
+        id: base
+        run: pip install -r requirements.txt
+      - name: Install dev requirements
+        id: dev
+        run: pip install -r requirements_dev.txt
+      - name: Run pytest
+        run: pytest
