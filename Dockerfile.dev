@@ -14,4 +14,4 @@ WORKDIR /usr/src
 
 WORKDIR /workspaces
 
-ENV SHELL /bin/fish
+ENV SHELL /usr/bin/fish
