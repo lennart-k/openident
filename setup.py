@@ -2,7 +2,7 @@
 
 import os
 
-from setuptools import find_namespace_packages, setup
+from setuptools import Distribution, find_namespace_packages, setup
 from setuptools.command.develop import develop
 
 BASEPATH = os.path.dirname(os.path.realpath(__file__))
@@ -16,7 +16,7 @@ REQUIREMENTS_DEV = (
 class DevelopCommand(develop):
     """ "Custom develop command that also installs development requirements"""
 
-    def __init__(self, dist, **kw):
+    def __init__(self, dist: Distribution, **kw):
         dist.install_requires.extend(REQUIREMENTS_DEV)
         super().__init__(dist)
 
