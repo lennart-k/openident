@@ -8,7 +8,7 @@ tox==3.24.1
 
 types-attrs==19.1.0
 
-black==21.7b0
+black==24.3.0
 
 sqlalchemy[mypy]==1.4.22
 
